@@ -1,0 +1,30 @@
+<h2><%= t('users.index.title') %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('users.index.table.id') %></th>
+      <th><%= t('users.index.table.email') %></th>
+      <th><%= t('users.index.table.postal_code') %></th>
+      <th><%= t('users.index.table.address') %></th>
+      <th><%= t('users.index.table.bio') %></th>
+      <th><%= t('users.index.table.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= user.address %></td>
+        <td><%= truncate(user.bio, length: 30) %></td>
+        <td>
+          <%= link_to t('users.index.table.detail'), user_path(user), class: "btn btn-sm btn-outline-primary" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
