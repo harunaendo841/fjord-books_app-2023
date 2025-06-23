@@ -3,11 +3,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= t('users.index.table.id') %></th>
-      <th><%= t('users.index.table.email') %></th>
-      <th><%= t('users.index.table.postal_code') %></th>
-      <th><%= t('users.index.table.address') %></th>
-      <th><%= t('users.index.table.bio') %></th>
+      <th><%= User.human_attribute_name(:id) %></th>
+      <th><%= User.human_attribute_name(:email) %></th>
+      <th><%= User.human_attribute_name(:postal_code) %></th>
+      <th><%= User.human_attribute_name(:address) %></th>
+      <th><%= User.human_attribute_name(:bio) %></th>
       <th><%= t('users.index.table.actions') %></th>
     </tr>
   </thead>
