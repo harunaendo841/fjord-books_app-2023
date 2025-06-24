@@ -3,7 +3,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= User.human_attribute_name(:id) %></th>
       <th><%= User.human_attribute_name(:email) %></th>
       <th><%= User.human_attribute_name(:postal_code) %></th>
       <th><%= User.human_attribute_name(:address) %></th>
@@ -14,7 +13,6 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.id %></td>
         <td><%= user.email %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>
