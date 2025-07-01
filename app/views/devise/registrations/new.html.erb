@@ -1,0 +1,41 @@
+<h2><%= t('devise.registrations.new.title') %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, t('devise.registrations.new.email_label') %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, t('devise.registrations.new.password_label') %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, t('devise.registrations.new.password_confirmation_label') %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code, t('devise.registrations.new.postal_code_label') %><br />
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, t('devise.registrations.new.address_label') %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio, t('devise.registrations.new.bio_label') %><br />
+    <%= f.text_area :bio, rows: 4 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('devise.registrations.new.submit'), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

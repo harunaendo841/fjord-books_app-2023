@@ -3,6 +3,7 @@ ja:
   activerecord:
     errors:
       messages:
+        not_saved: 'バリデーションに失敗しました: %{errors}'      
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
@@ -188,7 +189,7 @@ ja:
       destroy: "この%{name}を削除"
       new: "%{name}の新規作成"
       back: "%{name}の一覧に戻る"
-      delete_confirm: よろしいですか？
+      delete_confirm: 削除してもよろしいですか？
       title_index: "%{name}の一覧"
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
@@ -200,8 +201,86 @@ ja:
       previous: '‹ 前'
       next: '次 ›'
       truncate: '…'
-  controllers:
-    common:
-      notice_create: "%{name}が作成されました。"
-      notice_update: "%{name}が更新されました。"
-      notice_destroy: "%{name}が削除されました。"
+  devise:
+    sessions:
+      new:
+        title: "ログイン"
+        email_label: "メールアドレス"
+        password_label: "パスワード"
+        remember_me: "ログイン情報を保持する"
+        submit: "ログイン"
+        forgot_password: "パスワードを忘れた場合"
+    registrations:
+      new:
+        title: "アカウント登録"
+        email_label: "メールアドレス"
+        password_label: "パスワード（8文字以上）"
+        password_confirmation_label: "パスワード（確認）"
+        postal_code_label: "郵便番号"
+        address_label: "住所"
+        bio_label: "自己紹介"
+        submit: "登録"
+        back_to_login: "新規登録はこちら"
+      edit:
+        title: "アカウント編集"
+        email_label: "メールアドレス"
+        password_label: "パスワード（変更しない場合は空欄）"
+        password_confirmation_label: "パスワード（確認）"
+        current_password_label: "現在のパスワード"
+        postal_code_label: "郵便番号"
+        address_label: "住所"
+        bio_label: "自己紹介"
+        submit: "更新"
+        cancel: "キャンセル"
+        delete_account: "アカウント削除"
+        delete_confirm: "削除してもよろしいですか？"
+        back: "戻る"
+    passwords:
+      new:
+        title: "パスワード再設定"
+        email_label: "メールアドレス"
+        submit: "送信する"
+        back_to_login: "ログインはこちら"
+      edit:
+        title: "パスワード再設定（新しいパスワード入力）"
+        password_label: "新しいパスワード"
+        password_confirmation_label: "新しいパスワード（確認）"
+        submit: "パスワードを変更する"
+        back_to_login: "ログインはこちら"
+    mailer:
+      reset_password_instructions:
+        subject: 'パスワードの再設定について'
+        greeting: '%{email} さん、'
+        instructions: '以下のリンクをクリックしてパスワードを再設定してください。'
+        action: 'パスワードを再設定する'
+        ignoring: 'もしこのメールに心当たりがない場合は、このまま何もしなくても問題ありません。'
+        notice: 'リンクをクリックして新しいパスワードを作成するまでは、パスワードは変更されません。'
+        
+  users:
+    index:
+      title: "ユーザー一覧"
+      table:
+        id: "ID"
+        email: "メールアドレス"
+        postal_code: "郵便番号"
+        address: "住所"
+        bio: "自己紹介"
+        actions: "操作"
+        detail: "詳細"
+    show:
+      title: "ユーザー詳細"
+      id: "ID"
+      email: "メールアドレス"
+      postal_code: "郵便番号"
+      address: "住所"
+      bio: "自己紹介"
+      edit_profile: "プロフィール編集"
+      back: "戻る"
+  layouts:
+    navigation:
+      brand: "FjordBooks"
+      users_index: "ユーザー一覧"
+      login: "ログイン"
+      sign_up: "アカウント登録"
+      profile: "プロフィール"
+      logout: "ログアウト"

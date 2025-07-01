@@ -1,0 +1,25 @@
+<h2><%= t('devise.passwords.edit.title') %></h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="field">
+    <%= f.label :password, t('devise.passwords.edit.password_label') %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, t('devise.passwords.edit.password_confirmation_label') %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('devise.passwords.edit.submit'), class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<p class="mt-2">
+  <%= link_to t('devise.passwords.edit.back_to_login'), new_user_session_path %>
+</p>
